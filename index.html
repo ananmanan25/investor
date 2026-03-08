@@ -127,6 +127,49 @@
     }
     #terms-modal { background: rgba(0,0,0,0.95); display: none; }
     .auth-card { width: 350px; text-align: center; }
+        /* --- ENHANCED MOBILE RESPONSIVENESS --- */
+@media (max-width: 640px) {
+    .dashboard { padding: 16px; }
+
+    /* 1. Stack Stats Vertically for Readability */
+    .grid-3 { 
+        grid-template-columns: 1fr !important; 
+        gap: 12px; 
+    }
+
+    /* 2. Optimize Stat Values for Small Screens */
+    .stat-value { font-size: 1.4rem; }
+
+    /* 3. Fix the 2-column "Growth + News" section */
+    div[style*="grid-template-columns: 2fr 1fr"] { 
+        grid-template-columns: 1fr !important; 
+    }
+
+    /* 4. Thumb-Friendly Buttons (Min 44px height) */
+    .btn-action {
+        padding: 18px;
+        font-size: 1rem;
+    }
+
+    /* 5. Prevent Glassmorphism Lag (Lower Blur for Mobile) */
+    .glass-card {
+        backdrop-filter: blur(6px); /* Easier for mobile GPUs to render */
+        padding: 18px;
+    }
+
+    /* 6. Tabs Scrollable on Mobile */
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
+    }
+    .tab-btn { flex: 0 0 auto; }
+}
+
+/* --- TALL PHONE FIX (iPhone Pro Max / S24 Ultra) --- */
+@media (min-height: 800px) {
+    .news-item { margin-bottom: 25px; }
+}
 </style>
 </head>
 <body>
@@ -394,3 +437,4 @@
     </script>
 </body>
 </html>
+
